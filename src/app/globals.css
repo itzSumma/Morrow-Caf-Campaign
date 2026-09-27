@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-serif), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  /* Morrow Café Brand Color Palette */
+  --color-cream: #FAF7F2;
+  --color-cream-light: #FDFBF7;
+  --color-cream-subtle: #F3ECE4;
+  --color-cream-border: #E8DED4;
+  
+  --color-espresso: #1A120E;
+  --color-espresso-soft: #2C201A;
+  --color-mocha: #4A3A31;
+  --color-latte: #7D6B5F;
+  --color-latte-light: #A39388;
+
+  --color-caramel: #B26E3B;
+  --color-caramel-hover: #9A5A2B;
+  --color-caramel-light: #F7EFE8;
+
+  /* Subtle rounded surface radii */
+  --radius-surface-sm: 8px;
+  --radius-surface-md: 14px;
+  --radius-surface-lg: 20px;
+}
+
+:root {
+  --background: #FAF7F2;
+  --foreground: #1A120E;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
