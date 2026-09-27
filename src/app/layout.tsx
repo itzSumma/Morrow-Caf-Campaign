@@ -17,7 +17,7 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Morrow Café — Sector 104, Noida",
   description:
-    "A refined neighborhood sanctuary celebrating artisanal coffee, slow mornings, and mindful connections.",
+    "Claim ₹150 OFF your next visit to Morrow Café in Sector 104, Noida.",
 };
 
 export const viewport: Viewport = {
