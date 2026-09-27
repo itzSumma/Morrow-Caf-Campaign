@@ -84,7 +84,7 @@ export default function Hero() {
               {/* Image Frame with Editorial Radii & Subtle Border */}
               <div className="overflow-hidden rounded-surface-lg border border-cream-border bg-cream-subtle shadow-md">
                 <Image
-                  src="/images/hero-coffee.jpg"
+                  src="/images/coffee-plants.jpg"
                   alt="Coffee and plants at Morrow Café, Sector 104, Noida"
                   width={600}
                   height={800}
