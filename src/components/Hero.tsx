@@ -32,11 +32,11 @@ export default function Hero() {
             <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
               <a
                 href="#claim"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-caramel px-7 py-3.5 text-base font-semibold text-white shadow-md shadow-caramel/20 transition-all hover:bg-caramel-hover hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-caramel/30 text-center"
+                className="group inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-caramel px-8 py-3.5 text-base font-semibold text-white shadow-md shadow-caramel/25 transition-all duration-200 hover:bg-caramel-hover hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-caramel/40 text-center"
               >
                 <span>{CAMPAIGN_DETAILS.primaryCtaText}</span>
                 <svg
-                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                  className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="2.5"
@@ -49,7 +49,7 @@ export default function Hero() {
 
               <a
                 href="#how-it-works"
-                className="inline-flex items-center justify-center rounded-full border border-cream-border bg-cream-subtle px-5 py-3.5 text-xs sm:text-sm font-medium text-mocha hover:bg-cream-border/40 transition-colors text-center"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-cream-border bg-cream-subtle px-6 py-3.5 text-xs sm:text-sm font-medium text-mocha hover:bg-cream-border/50 hover:text-espresso transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-caramel text-center"
               >
                 How it works
               </a>
@@ -88,6 +88,7 @@ export default function Hero() {
                   alt="Coffee and plants at Morrow Café, Sector 104, Noida"
                   width={600}
                   height={800}
+                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 500px)"
                   priority
                   className="h-auto w-full object-cover aspect-3/4 sm:aspect-4/5 transition-transform duration-700 hover:scale-105"
                 />

@@ -7,12 +7,12 @@ import Footer from "@/components/Footer";
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-cream text-espresso selection:bg-caramel/20 selection:text-espresso">
+    <div className="flex min-h-screen flex-col bg-cream text-espresso selection:bg-caramel/20 selection:text-espresso overflow-x-clip">
       {/* Brand Header with Quick Action */}
       <Header />
 
       {/* Main Campaign Flow */}
-      <main className="flex-1">
+      <main id="main-content" className="flex-1 focus:outline-none">
         {/* Above the Fold Hero */}
         <Hero />
 
@@ -22,7 +22,7 @@ export default function HomePage() {
         {/* 3-Step Simple Process */}
         <HowItWorks />
 
-        {/* Visual Claim Section (Ready for Phase 3 Form) */}
+        {/* Visual Claim Section with Interactive ClaimForm */}
         <ClaimSection />
       </main>
 

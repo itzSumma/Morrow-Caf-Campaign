@@ -28,9 +28,10 @@ export default function OfferDetails() {
                 alt="Morrow Café interior in Sector 104, Noida"
                 width={700}
                 height={450}
+                sizes="(max-width: 1024px) 100vw, 550px)"
                 className="h-full w-full object-cover aspect-16/10 transition-transform duration-700 hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-espresso/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-espresso/50 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 text-cream-light">
                 <p className="font-editorial text-lg sm:text-xl font-normal">Morrow Café</p>
                 <p className="text-xs text-cream-subtle/90">Sector 104, Noida</p>
@@ -43,7 +44,7 @@ export default function OfferDetails() {
             {OFFER_HIGHLIGHTS.map((item, index) => (
               <div
                 key={index}
-                className="rounded-surface-md border border-cream-border bg-cream-light p-5 transition-all hover:border-caramel/40 hover:shadow-xs"
+                className="rounded-surface-md border border-cream-border bg-cream-light p-5 transition-all duration-200 hover:border-caramel/50 hover:shadow-xs hover:-translate-y-0.5"
               >
                 <span className="text-[11px] font-bold uppercase tracking-wider text-caramel">
                   {item.label}

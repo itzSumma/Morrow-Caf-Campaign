@@ -206,12 +206,12 @@ export default function ClaimForm() {
   };
 
   // ==========================================
-  // SUCCESS UI (Phase 4 Deliverable)
+  // SUCCESS UI (Phase 4 Deliverable + Phase 5 Interaction Polish)
   // ==========================================
   if (formState === "success") {
     return (
       <div
-        className="rounded-surface-md border border-cream-border/80 bg-cream p-6 sm:p-8 text-center animate-fadeIn"
+        className="rounded-surface-md border border-cream-border/80 bg-cream p-6 sm:p-8 text-center animate-fade-in"
         role="region"
         aria-label="Claim Confirmation"
       >
@@ -221,7 +221,7 @@ export default function ClaimForm() {
         </div>
 
         {/* Success Icon */}
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 mb-4">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 mb-4 transition-transform duration-300 hover:scale-105">
           <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
           </svg>
@@ -239,7 +239,7 @@ export default function ClaimForm() {
         </p>
 
         {/* Unique Claim Code Display */}
-        <div className="mt-6 rounded-surface-sm border border-dashed border-caramel/50 bg-cream-light p-4 max-w-xs mx-auto">
+        <div className="mt-6 rounded-surface-sm border border-dashed border-caramel/50 bg-cream-light p-4 max-w-xs mx-auto transition-transform duration-200 hover:scale-[1.02]">
           <span className="block text-[10px] font-bold uppercase tracking-widest text-latte mb-1">
             Your Exclusive Claim Code
           </span>
@@ -248,13 +248,13 @@ export default function ClaimForm() {
           </span>
         </div>
 
-        {/* Copy Code Button */}
+        {/* Copy Code Button & Claim Another */}
         <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-3">
           <button
             type="button"
             onClick={handleCopyCode}
             aria-label="Copy claim code to clipboard"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-espresso px-6 py-2.5 text-xs sm:text-sm font-semibold text-cream-light shadow-sm transition-all hover:bg-mocha hover:shadow active:scale-95 focus:outline-none focus:ring-2 focus:ring-caramel/40"
+            className="w-full sm:w-auto inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-espresso px-6 py-2.5 text-xs sm:text-sm font-semibold text-cream-light shadow-sm transition-all duration-200 hover:bg-mocha hover:shadow-md active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-caramel focus-visible:ring-offset-2 cursor-pointer"
           >
             {copied ? (
               <>
@@ -276,7 +276,7 @@ export default function ClaimForm() {
           <button
             type="button"
             onClick={handleReset}
-            className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-cream-border bg-cream-light px-5 py-2.5 text-xs sm:text-sm font-medium text-latte hover:text-espresso hover:bg-cream-border/40 transition-colors"
+            className="w-full sm:w-auto inline-flex min-h-[44px] items-center justify-center rounded-full border border-cream-border bg-cream-light px-5 py-2.5 text-xs sm:text-sm font-medium text-latte hover:text-espresso hover:bg-cream-border/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-caramel focus-visible:ring-offset-2 cursor-pointer"
           >
             Claim Another
           </button>
@@ -297,7 +297,7 @@ export default function ClaimForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="space-y-4 rounded-surface-md border border-cream-border/80 bg-cream p-5 sm:p-6 transition-all"
+      className="space-y-4 rounded-surface-md border border-cream-border/80 bg-cream p-5 sm:p-6 transition-all animate-fade-in"
       aria-label="Claim Offer Form"
     >
       {/* Live Region for Screen Readers */}
@@ -310,7 +310,7 @@ export default function ClaimForm() {
       {formState === "error" && apiErrorMessage && (
         <div
           role="alert"
-          className="rounded-surface-sm border border-rose-200 bg-rose-50/90 p-3.5 text-xs text-rose-800 flex items-start gap-2.5 animate-fadeIn"
+          className="rounded-surface-sm border border-rose-200 bg-rose-50/90 p-3.5 text-xs text-rose-800 flex items-start gap-2.5 animate-fade-in"
         >
           <svg className="h-4 w-4 text-rose-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
             <path
@@ -348,10 +348,10 @@ export default function ClaimForm() {
             aria-required="true"
             aria-invalid={Boolean(errors.name)}
             aria-describedby={errors.name ? "name-error" : undefined}
-            className={`w-full rounded-surface-sm border bg-cream-light px-3.5 py-2.5 text-base sm:text-sm text-espresso placeholder:text-latte-light transition-all focus:outline-none focus:ring-2 disabled:opacity-60 disabled:cursor-not-allowed ${
+            className={`w-full min-h-[46px] rounded-surface-sm border bg-cream-light px-3.5 py-2.5 text-base sm:text-sm text-espresso placeholder:text-latte-light transition-all focus:outline-none focus-visible:ring-2 disabled:opacity-60 disabled:cursor-not-allowed ${
               errors.name
-                ? "border-rose-400 focus:border-rose-500 focus:ring-rose-200"
-                : "border-cream-border focus:border-caramel focus:ring-caramel/20"
+                ? "border-rose-400 focus:border-rose-500 focus-visible:ring-rose-300"
+                : "border-cream-border focus:border-caramel focus-visible:ring-caramel/30"
             }`}
           />
         </div>
@@ -359,7 +359,7 @@ export default function ClaimForm() {
           <p
             id="name-error"
             role="alert"
-            className="mt-1.5 flex items-center gap-1.5 text-xs text-rose-600 font-medium animate-fadeIn"
+            className="mt-1.5 flex items-center gap-1.5 text-xs text-rose-600 font-medium animate-fade-in"
           >
             <svg
               className="h-3.5 w-3.5 flex-shrink-0"
@@ -402,10 +402,10 @@ export default function ClaimForm() {
             aria-required="true"
             aria-invalid={Boolean(errors.phone)}
             aria-describedby={errors.phone ? "phone-error" : "phone-hint"}
-            className={`w-full rounded-surface-sm border bg-cream-light px-3.5 py-2.5 text-base sm:text-sm text-espresso placeholder:text-latte-light transition-all focus:outline-none focus:ring-2 disabled:opacity-60 disabled:cursor-not-allowed ${
+            className={`w-full min-h-[46px] rounded-surface-sm border bg-cream-light px-3.5 py-2.5 text-base sm:text-sm text-espresso placeholder:text-latte-light transition-all focus:outline-none focus-visible:ring-2 disabled:opacity-60 disabled:cursor-not-allowed ${
               errors.phone
-                ? "border-rose-400 focus:border-rose-500 focus:ring-rose-200"
-                : "border-cream-border focus:border-caramel focus:ring-caramel/20"
+                ? "border-rose-400 focus:border-rose-500 focus-visible:ring-rose-300"
+                : "border-cream-border focus:border-caramel focus-visible:ring-caramel/30"
             }`}
           />
         </div>
@@ -413,7 +413,7 @@ export default function ClaimForm() {
           <p
             id="phone-error"
             role="alert"
-            className="mt-1.5 flex items-center gap-1.5 text-xs text-rose-600 font-medium animate-fadeIn"
+            className="mt-1.5 flex items-center gap-1.5 text-xs text-rose-600 font-medium animate-fade-in"
           >
             <svg
               className="h-3.5 w-3.5 flex-shrink-0"
@@ -440,7 +440,7 @@ export default function ClaimForm() {
       <button
         type="submit"
         disabled={formState === "submitting"}
-        className="w-full rounded-full bg-caramel py-3.5 text-sm font-semibold text-white shadow-md shadow-caramel/20 transition-all hover:bg-caramel-hover hover:shadow-lg active:scale-[0.99] focus:outline-none focus:ring-4 focus:ring-caramel/30 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-2 flex items-center justify-center gap-2"
+        className="w-full min-h-[48px] rounded-full bg-caramel py-3 px-6 text-sm font-semibold text-white shadow-md shadow-caramel/25 transition-all duration-200 hover:bg-caramel-hover hover:shadow-lg active:scale-[0.99] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-caramel/40 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-2 flex items-center justify-center gap-2"
       >
         {formState === "submitting" ? (
           <>

@@ -22,14 +22,14 @@ export default function HowItWorks() {
           {HOW_IT_WORKS_STEPS.map((step) => (
             <div
               key={step.step}
-              className="relative flex flex-col rounded-surface-lg border border-cream-border bg-cream-light p-6 sm:p-7 shadow-2xs transition-all hover:border-caramel/40 hover:-translate-y-1 hover:shadow-sm"
+              className="relative flex flex-col rounded-surface-lg border border-cream-border bg-cream-light p-6 sm:p-7 shadow-2xs transition-all duration-300 hover:border-caramel/50 hover:-translate-y-1.5 hover:shadow-md"
             >
               {/* Step Number Badge */}
               <div className="flex items-center justify-between">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-caramel-light font-editorial text-base font-bold text-caramel">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-caramel-light font-editorial text-base font-bold text-caramel transition-transform duration-300 group-hover:scale-110">
                   0{step.step}
                 </span>
-                <span className="text-[10px] font-semibold uppercase tracking-widest text-latte-light">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-latte-light">
                   Step 0{step.step}
                 </span>
               </div>

@@ -24,11 +24,17 @@ export default function Footer() {
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-latte">
           <p>© {new Date().getFullYear()} {CAMPAIGN_DETAILS.title}. All rights reserved.</p>
           <div className="flex items-center gap-4 text-xs">
-            <Link href="#claim" className="hover:text-caramel transition-colors">
+            <Link
+              href="#claim"
+              className="min-h-[44px] inline-flex items-center hover:text-caramel transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-caramel rounded-sm px-1"
+            >
               {CAMPAIGN_DETAILS.primaryCtaText}
             </Link>
-            <span>•</span>
-            <Link href="#how-it-works" className="hover:text-caramel transition-colors">
+            <span aria-hidden="true">•</span>
+            <Link
+              href="#how-it-works"
+              className="min-h-[44px] inline-flex items-center hover:text-caramel transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-caramel rounded-sm px-1"
+            >
               How it works
             </Link>
           </div>

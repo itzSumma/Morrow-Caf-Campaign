@@ -4,7 +4,7 @@
   --font-serif: var(--font-serif), "Playfair Display", Georgia, serif;
   --font-sans: var(--font-sans), "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
 
-  /* Morrow Café Brand Color Palette */
+  /* Morrow Café Brand Color Palette (Optimized for WCAG 2.1 AA Contrast) */
   --color-cream: #FAF7F2;
   --color-cream-light: #FDFBF7;
   --color-cream-subtle: #F3ECE4;
@@ -13,11 +13,11 @@
   --color-espresso: #1A120E;
   --color-espresso-soft: #2C201A;
   --color-mocha: #4A3A31;
-  --color-latte: #7D6B5F;
-  --color-latte-light: #A39388;
+  --color-latte: #705F53;
+  --color-latte-light: #94857B;
 
-  --color-caramel: #B26E3B;
-  --color-caramel-hover: #9A5A2B;
+  --color-caramel: #9C5424;
+  --color-caramel-hover: #82441B;
   --color-caramel-light: #F7EFE8;
 
   /* Subtle rounded surface radii */
@@ -50,3 +50,32 @@ body {
 .text-balance {
   text-wrap: balance;
 }
+
+/* Animations */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Reduced Motion Preference for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
